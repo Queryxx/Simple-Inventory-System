@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery-3.7.1.min.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1 class="text">Register</h1>
+            <div class="form-group text-center">
+                <span id="register_message" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="lbl" for="reg_username">
+                    <i class="fas fa-user"></i> Username
+                </label>
+                <input type="text" 
+                       placeholder="Enter username" 
+                       id="reg_username" 
+                       class="inp"
+                       autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label class="lbl" for="reg_password">
+                    <i class="fas fa-lock"></i> Password
+                </label>
+                <input type="password" 
+                       placeholder="Enter password" 
+                       class="inp" 
+                       id="reg_password">
+            </div>
+            <div class="form-group">
+                <label class="lbl" for="confirm_password">
+                    <i class="fas fa-lock"></i> Confirm Password
+                </label>
+                <input type="password" 
+                       placeholder="Confirm password" 
+                       class="inp" 
+                       id="confirm_password">
+            </div>
+            <button class="btn" onclick="register()">
+                <i class="fas fa-user-plus"></i> Register
+            </button>
+            <div class="text-center mt-3">
+                <span class="text-white">Already have an account? 
+                    <a href="/" class="link text-info">
+                        <i class="fas fa-sign-in-alt"></i> Login here
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center p-4">
+                    <div class="success-animation mb-4">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4 class="modal-title mb-3">Registration Successful!</h4>
+                    <p class="mb-4">Your account has been created successfully.</p>
+                    <button type="button" class="btn btn-success" onclick="window.location.href='/'">
+                        <i class="fas fa-sign-in-alt"></i> Proceed to Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+virtualenv venv
+.\venv\Scripts\activate
+
+
+[INSTALL DB]
+pip install flask-mysqldb
+
+flask --app main.py --debug run
